@@ -9,19 +9,23 @@
 </head>
 <body>
 <h1>FONTFAMILY LIST</h1>
+<div id="data"></div>
 <script>
   window.addEventListener('fontfamily-loaded',function(){
+    var w = document.getElementById("data")
+    var d = ""
     for(var i=0;i<fontfamily_list.length;i++){
         var fontfamily = fontfamily_list[i]
-        document.write(fontfamily.name)
-        document.write(" : ")
+        d += fontfamily.name
+        d += " : "
         for (var key in fontfamily.lang){
-            document.write(key)
-            document.write("=")
-            document.write(fontfamily.lang[key])
-            document.write("<br>")
+            d += key
+            d += "="
+            d += fontfamily.lang[key]
+            d += "<br>"
         }
     }
+    w.innerHTML = d
   });
 </script>
 </body>
