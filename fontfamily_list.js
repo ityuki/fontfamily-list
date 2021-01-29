@@ -1,3 +1,20 @@
+/**
+fontfamily-list
+
+Copyright (c) 2021 Ituki Kirihara/NI
+
+This software is released under the MIT License.
+http://opensource.org/licenses/mit-license.php
+
+(Adobe-Blank)
+This Font Software is licensed under the SIL Open Font License,
+Version 1.1.
+
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+
+*/
+
 var fontfamily_list = [];
 document.addEventListener('DOMContentLoaded',function(){
   fontfamily_list = [];
