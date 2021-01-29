@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded',function(){
     'Trebuchet',
     'Verdana',
 
-    'serif',
     'Batang',
     'Book Antiqua',
     'Bookman Old Style',
@@ -42,7 +41,6 @@ document.addEventListener('DOMContentLoaded',function(){
     'Times New Roman',
     'Tunga',
 
-    'monospace',
     'BatangChe',
     'Courier',
     'Courier New',
@@ -60,7 +58,6 @@ document.addEventListener('DOMContentLoaded',function(){
     'Small Fonts',
     'Terminal',
     
-    'fantasy',
     'alba',
     'alba matter',
     'alba super',
@@ -78,7 +75,6 @@ document.addEventListener('DOMContentLoaded',function(){
     'Pussycat Snickers',
     'Weltron Urban',
 
-    'cursive',
     'Comic Sans MS',
     'HGP行書体',
     'HG正楷書体-PRO',
@@ -112,6 +108,10 @@ document.addEventListener('DOMContentLoaded',function(){
     'Osaka－等幅',
     'Droid Sans',
     'Roboto',
+
+    'Noto Sans JP',
+    'Noto Sans CJK JP',
+    
   ];
   if (typeof variable !== 'undefined' && Array.isArray(fontFamily_extra_list)){
     for (var i=0;i<fontFamily_extra_list.length;i++){
