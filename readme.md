@@ -42,3 +42,8 @@
   });
 ```
 
+## ライセンス
+* 本プログラムは、MIT Licenseです
+* 内部で使用しているフォントは、OFL-1.1 License（Adobe Blank）です
+
+
