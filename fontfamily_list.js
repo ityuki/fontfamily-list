@@ -160,6 +160,10 @@ document.addEventListener('DOMContentLoaded',function(){
     var check = async function(fontname,str){
         var chkobj = document.createElement('span');
         chkobj.innerHTML = str;
+        chkobj.style.height = 0
+        chkobj.style.overflow = 'hidden'
+        chkobj.style.position = 'absolute'
+        chkobj.style.visibility = 'hidden'
         chkobj.style.fontSize = '1rem';
         chkobj.style.fontFamily = '"' + fontname.replace(/"/g, '\"') + '",' + f;
         document.body.appendChild(chkobj);
@@ -208,9 +212,9 @@ document.addEventListener('DOMContentLoaded',function(){
         if (!check_all(false)){
           document.fonts.ready.then(function () {
             check_all(true)
-          }
+          })
         }
-      }
+      })
     }
     //window.isInstalledFont = check;
   });
