@@ -182,15 +182,33 @@ document.addEventListener('DOMContentLoaded',function(){
         }
       }
     }
-    var check_all = async function(){
+    var check_all = async function(force){
       for (var i=0;i<check_font_list.length;i++){
         await check_add(check_font_list[i])
       }
-      document.head.removeChild(style);
-      var ev = new CustomEvent('fontfamily-loaded');
-      window.dispatchEvent(ev);
+      if (check_font_list.length == fontfamily_list.length){
+        if (force){
+          document.head.removeChild(style);
+          var ev = new CustomEvent('fontfamily-loaded');
+          window.dispatchEvent(ev);
+          return true
+        }else{
+          fontfamily_list = []
+          return false
+        }
+      }else{
+        return true
+      }
     }
-    check_all();
+    if (!check_all(false)){
+      document.fonts.ready.then(function () {
+        if (!check_all(false)){
+          document.fonts.ready.then(function () {
+            check_all(true)
+          }
+        }
+      }
+    }
     //window.isInstalledFont = check;
   });
 });
