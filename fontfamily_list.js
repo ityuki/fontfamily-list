@@ -194,18 +194,15 @@ document.addEventListener('DOMContentLoaded',function(){
         await check_add(check_font_list[i])
       }
       if (check_font_list.length == fontfamily_list.length){
-        if (force){
-          document.head.removeChild(style);
-          var ev = new CustomEvent('fontfamily-loaded');
-          window.dispatchEvent(ev);
-          return true
-        }else{
+        if (!force){
           fontfamily_list = []
           return false
         }
-      }else{
-        return true
       }
+      document.head.removeChild(style);
+      var ev = new CustomEvent('fontfamily-loaded');
+      window.dispatchEvent(ev);
+      return true
     }
     if (!check_all(false)){
       document.fonts.ready.then(function () {
