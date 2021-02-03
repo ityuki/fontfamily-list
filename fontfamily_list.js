@@ -137,7 +137,10 @@ document.addEventListener('DOMContentLoaded',function(){
   }
   var check_code = "a";
   var check_codepoint = {
-    ja: 'あ'
+    ja: 'あ',
+    zh: '开',
+    ko: '아',
+    ru: 'Б',
   };
 
   var f = "Blank";
