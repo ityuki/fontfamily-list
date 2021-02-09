@@ -223,9 +223,11 @@ document.addEventListener('DOMContentLoaded',function(){
       window.dispatchEvent(ev);
       return true
     }
-    check_all(false).catch(function (){
+    check_all(false).then(function (ok){
+      if (ok) return
       document.fonts.ready.then(function () {
-        check_all(false).catch(function (){
+        check_all(false).then(function (ok){
+          if (ok) return
           document.fonts.ready.then(function () {
             check_all(true)
           })
