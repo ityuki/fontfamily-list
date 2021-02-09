@@ -223,15 +223,15 @@ document.addEventListener('DOMContentLoaded',function(){
       window.dispatchEvent(ev);
       return true
     }
-    if (!check_all(false)){
+    check_all(false).catch(function (){
       document.fonts.ready.then(function () {
-        if (!check_all(false)){
+        check_all(false).catch(function (){
           document.fonts.ready.then(function () {
             check_all(true)
           })
-        }
+        })
       })
-    }
+    })
     //window.isInstalledFont = check;
   });
 });
