@@ -208,6 +208,7 @@ document.addEventListener('DOMContentLoaded',function(){
       }
     }
     var check_all = async function(force){
+      fontfamily_list = []
       for (var i=0;i<check_font_list.length;i++){
         await check_add(check_font_list[i])
       }
