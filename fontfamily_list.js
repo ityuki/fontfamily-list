@@ -203,14 +203,18 @@ document.addEventListener('DOMContentLoaded',function(){
           }else{
             obj.lang[key] = false;
           }
-          fontfamily_list.push(obj);
         }
+        return obj
       }
+      return null
     }
     var check_all = async function(force){
       fontfamily_list = []
       for (var i=0;i<check_font_list.length;i++){
-        await check_add(check_font_list[i])
+        var d = await check_add(check_font_list[i])
+        if (d != null){
+          fontfamily_list.push(d)
+        }
       }
       if (check_font_list.length == fontfamily_list.length){
         if (!force){
