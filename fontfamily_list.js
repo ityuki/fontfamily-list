@@ -182,10 +182,10 @@ document.addEventListener('DOMContentLoaded',function(){
         chkobj.style.overflow = 'hidden'
         chkobj.style.position = 'absolute'
         chkobj.style.visibility = 'hidden'
-        chkobj.style.fontSize = '1rem';
+        chkobj.style.fontSize = '72px';
         chkobj.style.fontFamily = '"' + fontname.replace(/"/g, '\"') + '",' + f;
         document.body.appendChild(chkobj);
-        return document.fonts.ready.then(function () {
+        return await document.fonts.ready.then(function () {
           var ok = chkobj.offsetWidth > 1;
           document.body.removeChild(chkobj);
           return ok;
