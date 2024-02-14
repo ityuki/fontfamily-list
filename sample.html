@@ -11,7 +11,9 @@
 <h1>FONTFAMILY LIST</h1>
 <div id="data"></div>
 <script>
-  window.addEventListener('fontfamily-loaded',function(){
+  var fontfamily_list = []
+  window.addEventListener('fontfamily_list-loaded',function(event){
+    fontfamily_list = event.detail
     var w = document.getElementById("data")
     var d = ""
     for(var i=0;i<fontfamily_list.length;i++){
@@ -24,7 +26,7 @@
             d += fontfamily.lang[key]
             d += " &nbsp; "
         }
-        d += "<br>"
+        d += "<br>";
     }
     w.innerHTML = d
   });
